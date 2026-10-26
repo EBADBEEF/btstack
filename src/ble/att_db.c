@@ -266,7 +266,7 @@ static int att_copy_value(att_iterator_t *it, uint16_t offset, uint8_t * buffer,
     
     // STATIC
     uint16_t bytes_to_copy = (uint16_t) btstack_min(it->value_len - offset, buffer_size);
-    (void)memcpy(buffer, it->value, bytes_to_copy);
+    (void)memcpy(buffer, &it->value[offset], bytes_to_copy);
     return bytes_to_copy;
 }
 
